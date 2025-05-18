@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <title>Login - QR Code</title>
+    <link rel="stylesheet" href="resources/css/style.css"/>
+</h:head>
+<h:body>
+    <div class="container">
+        <h2>Login</h2>
+        <h:form>
+            <h:inputText value="#{loginBean.username}" required="true" placeholder="Usuário" />
+            <h:inputSecret value="#{loginBean.password}" required="true" placeholder="Senha" />
+            <h:commandButton value="Entrar" action="#{loginBean.login}" styleClass="btn"/>
+        </h:form>
+    </div>
+</h:body>
+</html>

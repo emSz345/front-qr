@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <title>Gerador de QR Code</title>
+    <h:outputStylesheet library="css" name="style.css" />
+</h:head>
+<h:body>
+    <div class="container">
+        <h2>Painel Gerador de QR Code</h2>
+        <h:form>
+            <h:inputTextarea value="#{qrBean.content}" required="true" rows="4" cols="50"
+                             placeholder="Digite o conteúdo do QR Code aqui..." />
+            <div class="btns">
+                <h:commandButton value="Gerar QR Code" action="#{qrBean.generate}" styleClass="btn"/>
+                <h:commandButton value="Limpar" action="#{qrBean.clear}" styleClass="btn-red"/>
+            </div>
+        </h:form>
+
+        <h:panelGroup rendered="#{qrBean.qrImage != null}">
+            <h:graphicImage value="#{qrBean.qrImage}" alt="QR Code" />
+        </h:panelGroup>
+    </div>
+</h:body>
+</html>
